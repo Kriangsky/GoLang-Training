@@ -9,8 +9,13 @@ import (
 
 
 func SetUpRoute(r *gin.Engine, data []models.Mahasiswa){
-	// r.GET("/api/mahasiswa", handlers.ListMahasiswa)
-	r.POST("/api/mahasiswa", handlers.CreateMahasiswa)
-	r.GET("/api/mahasiswa", handlers.GetMahasiswas(data))
+	apiGroup := r.Group("/api")
+	{
+		mahasiswaGroup := apiGroup.Group("/mahasiswa")
+		{
+			mahasiswaGroup.GET("/", handlers.ListMahasiswa)
+			mahasiswaGroup.POST("/", handlers.CreateMahasiswa)
+		}
+	}
 }
 

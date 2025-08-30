@@ -74,6 +74,8 @@ func main() {
 			fmt.Println("Panic :", r)
 		}
 	}()
+	nomor1 := "081299817566"
+	nomor2 := "081511428222"
 
 	data := []models.Mahasiswa{
 		{
@@ -83,8 +85,9 @@ func main() {
 			Address: models.Alamat{
 				Jalan:   "Kedondong",
 				Kota:    "Gedong Panjang",
-				KodePos: 1224,
+				KodePos: "1224",
 			},
+			Nomor: &nomor1,
 			Nilai: []int{88, 94, 98},
 		},{
 			Nama: "John Doe",
@@ -93,8 +96,9 @@ func main() {
 			Address: models.Alamat{
 				Jalan:   "Kedondong",
 				Kota:    "Gedong Panjang",
-				KodePos: 1224,
+				KodePos: "1224",
 			},
+			Nomor: &nomor2,
 			Nilai: []int{70, 60, 98},
 		},
 	}

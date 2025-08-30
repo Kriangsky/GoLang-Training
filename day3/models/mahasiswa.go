@@ -3,10 +3,11 @@ package models
 type Alamat struct {
 	Jalan   string
 	Kota    string
-	KodePos int
+	KodePos string
 }
 
 type Mahasiswa struct {
+	ID              int
 	Nama            string
 	Umur            int
 	Hobi            []string
